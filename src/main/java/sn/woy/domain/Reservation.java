@@ -1,5 +1,4 @@
-// domain/Reservation.java
-package com.ism.reservationsalles.domain;
+package sn.woy.domain;
 
 import java.time.LocalDateTime;
 
@@ -20,16 +19,38 @@ public class Reservation extends AbstractEntity {
         this.statut = StatutReservation.EN_ATTENTE;
     }
 
-    public Salle getSalle() { return salle; }
-    public String getReservateur() { return reservateur; }
-    public String getMotif() { return motif; }
-    public void setMotif(String motif) { this.motif = motif; }
-    public LocalDateTime getDebut() { return debut; }
-    public LocalDateTime getFin() { return fin; }
-    public StatutReservation getStatut() { return statut; }
-    public void setStatut(StatutReservation statut) { this.statut = statut; }
+    public Salle getSalle() {
+        return salle;
+    }
 
-    /** Chevauchement : début strictement avant la fin existante ET fin strictement après le début existant. */
+    public String getReservateur() {
+        return reservateur;
+    }
+
+    public String getMotif() {
+        return motif;
+    }
+
+    public void setMotif(String motif) {
+        this.motif = motif;
+    }
+
+    public LocalDateTime getDebut() {
+        return debut;
+    }
+
+    public LocalDateTime getFin() {
+        return fin;
+    }
+
+    public StatutReservation getStatut() {
+        return statut;
+    }
+
+    public void setStatut(StatutReservation statut) {
+        this.statut = statut;
+    }
+
     public boolean chevauche(LocalDateTime autreDebut, LocalDateTime autreFin) {
         return autreDebut.isBefore(this.fin) && autreFin.isAfter(this.debut);
     }

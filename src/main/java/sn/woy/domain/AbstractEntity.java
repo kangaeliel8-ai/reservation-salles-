@@ -1,4 +1,4 @@
-package com.ism.reservationsalles.domain;
+package sn.woy.domain;
 
 import java.time.LocalDateTime;
 import java.util.Objects;
