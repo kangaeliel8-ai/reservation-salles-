@@ -10,4 +10,5 @@ public interface SalleRepository {
     Optional<Salle> findById(Long id);
     List<Salle> findAll();
     boolean existsByNom(String nom);
+    List<Salle> findByCapaciteMinimale(int capaciteMin);
 }

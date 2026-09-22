@@ -37,4 +37,13 @@ public final class InMemorySalleRepository implements SalleRepository {
         return data.values().stream()
                 .anyMatch(s -> s.getNom().equalsIgnoreCase(nom));
     }
+
+    @Override
+    public List<Salle> findByCapaciteMinimale(int capaciteMin) {
+        return data.values().stream()
+                .filter(Salle::isActive)
+                .filter(s -> s.getCapacite() >= capaciteMin)
+                .sorted((a, b) -> Integer.compare(b.getCapacite(), a.getCapacite()))
+                .toList();
+    }
 }
