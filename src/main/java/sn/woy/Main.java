@@ -14,7 +14,7 @@ import sn.woy.repository.SalleRepository;
 import sn.woy.repository.memory.InMemoryReservationRepository;
 import sn.woy.repository.memory.InMemorySalleRepository;
 
-public final class App {
+public final class Main {
 
     public static void main(String[] args) {
         // Composition Root : on choisit les implementations ici, nulle part ailleurs
